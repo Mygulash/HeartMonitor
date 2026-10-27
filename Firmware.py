@@ -17,12 +17,12 @@ is_above_threshold = False
 for i in range(len(t)):
     if signal[i] > threshold[i] and not is_above_threshold:
         is_above_threshold = True
-        beats_t.append(t[i])       # Uložení času tepu
-        beats_val.append(signal[i]) # Uložení hodnoty tepu
+        beats_t.append(t[i])
+        beats_val.append(signal[i])
     elif signal[i] < threshold[i] and is_above_threshold:
         is_above_threshold = False
-        resets_t.append(t[i])       # Uložení času resetu
-        resets_val.append(signal[i]) # Uložení hodnoty resetu
+        resets_t.append(t[i])
+        resets_val.append(signal[i])
 
 plt.figure(figsize=(10, 5))
 plt.plot(t, signal, label="Vyhlazený PPG signál", color="#1f77b4")
